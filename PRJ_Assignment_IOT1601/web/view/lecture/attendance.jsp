@@ -29,7 +29,7 @@
             <table border:1px >
                 <thead>
                     <tr>
-                        <th>Index</th>
+                        <th>No</th>
                         <th>Member</th>
                         <th>Code</th>
                         <th>Surname</th>

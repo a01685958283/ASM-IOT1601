@@ -31,8 +31,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th>StudentID</th>
-                        <th>StudentName</th>
+                    Class:  <u>IOT1601<u>  
+                    </tr>
+                    <tr>
+                        <th>No</th>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
                         <th>Absent(%)</th>
                         <th>06/09</th>
                         <th>08/09</th>
@@ -48,6 +52,7 @@
                 </thead>     
                 <tbody>   
                     <tr>
+                        <td>1</td>  
                         <td>HE140145</td>                   
                         <td>Phan Hoàng Tùng</td>
                         <td>30%</td>
@@ -63,6 +68,7 @@
                         <td>P</td>                                          
                     </tr>     
                     <tr>
+                        <td>2</td>  
                         <td>HE140739</td>                   
                         <td>Nguyễn Minh	Tuấn</td>
                         <td>0%</td>
@@ -78,6 +84,7 @@
                         <td>P</td>                                          
                     </tr>     
                     <tr>
+                        <td>3</td>  
                         <td>HE141088</td>                   
                         <td>Nguyễn Minh	Hoàng</td>
                         <td>20%</td>
@@ -93,6 +100,7 @@
                         <td>P</td>                                          
                     </tr>     
                     <tr>
+                        <td>4</td>  
                         <td>HE141428</td>                   
                         <td>Nguyễn Phạm Bình Minh</td>
                         <td>10%</td>
@@ -108,6 +116,7 @@
                         <td>P</td>                                          
                     </tr>     
                     <tr>
+                        <td>5</td>  
                         <td>HE141476</td>                   
                         <td>Nguyễn Thế Thái</td>
                         <td>50%</td>
