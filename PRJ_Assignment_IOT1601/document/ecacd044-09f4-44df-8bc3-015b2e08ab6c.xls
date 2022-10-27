@@ -1,0 +1,294 @@
+﻿<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<ss:Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+<Author>AP</Author>
+<LastAuthor></LastAuthor>
+<Created>10/27/2022 8:30:38 AM</Created>
+<Company>FPT University</Company>
+<Version>1.0</Version>
+</DocumentProperties>
+<ss:Worksheet ss:Name="Sheet1">
+<ss:Table>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">RollNumber</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">MemberCode</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">LastName</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">MiddleName</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">FirstName</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Fullname</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Email</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE140145</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TungPHHE140145</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phan</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hoàng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tùng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phan Hoàng Tùng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TungPHHE140145@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE140739</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TuanNMHE140739</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tuấn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Minh Tuấn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TuanNMHE140739@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE141088</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HoangNMHE141088</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hoàng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Minh Hoàng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HoangNMHE141088@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE141428</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">MinhNPBHE141428</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm Bình</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Phạm Bình Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">MinhNPBHE141428@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE141476</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ThaiNTHE141476</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Thế</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Thái</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Thế Thái</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ThaiNTHE141476@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE141499</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">NamNHHE141499</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hữu</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nam</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Hữu Nam</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">NamNHHE141499@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE141560</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">KietHTHE141560</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hoàng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tuấn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Kiệt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hoàng Tuấn Kiệt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">KietHTHE141560@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE150798</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VuCQHE150798</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Chu</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Quang</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Chu Quang Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VuCQHE150798@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE151023</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ToanVDHE151023</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đức</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Toàn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ Đức Toàn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ToanVDHE151023@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE151027</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TuanTVHE151027</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trần</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Văn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tuấn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trần Văn Tuấn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TuanTVHE151027@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE151169</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ThinhNHHE151169</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hưng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Thịnh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Hưng Thịnh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ThinhNHHE151169@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE153274</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ChienNMHE153274</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Chiến</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Minh Chiến</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ChienNMHE153274@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE153575</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TrungDQHE153575</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đường</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Quang</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trung</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đường Quang Trung</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">TrungDQHE153575@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE153594</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VietNQHE153594</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Quốc</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Việt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Quốc Việt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VietNQHE153594@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE153605</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HungPVHE153605</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Văn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hưng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm Văn Hưng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HungPVHE153605@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE153694</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">AnhTHHE153694</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trịnh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hoàng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Anh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trịnh Hoàng Anh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">AnhTHHE153694@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160023</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">QuanVMHE160023</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Quân</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ Minh Quân</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">QuanVMHE160023@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160107</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HoanNBHE160107</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Bá</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hoàn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Nguyễn Bá Hoàn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HoanNBHE160107@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160117</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DungLTHE160117</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lê</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trung</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Dũng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lê Trung Dũng</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DungLTHE160117@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160133</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DuyNAHE160133</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ngô</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Anh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Duy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ngô Anh Duy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DuyNAHE160133@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160200</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">MinhTHHE160200</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trần</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hiểu</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trần Hiểu Minh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">MinhTHHE160200@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160537</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">BinhPHHE160537</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hải</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Bình</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm Hải Bình</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">BinhPHHE160537@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE160717</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VuongDVHE160717</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đoàn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Việt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vương</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đoàn Việt Vương</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VuongDVHE160717@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE161160</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ThinhKCHE161160</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Kiều</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Công</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Thịnh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Kiều Công Thịnh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">ThinhKCHE161160@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE161701</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DatDTHE161701</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đoàn</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Tiến</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đạt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đoàn Tiến Đạt</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DatDTHE161701@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE161767</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HuyTQHE161767</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trần</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Quang</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Huy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Trần Quang Huy</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">HuyTQHE161767@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE162003</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">LamPTHE162003</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Thanh</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lâm</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Phạm Thanh Lâm</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">LamPTHE162003@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE163208</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DucVNHE163208</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Ngọc</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đức</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ Ngọc Đức</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DucVNHE163208@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">HE163444</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DucDHHE163444</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Dương</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Hải</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Đức</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Dương Hải Đức</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">DucDHHE163444@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+<ss:Row>
+<ss:Cell><ss:Data ss:Type="String">SE06160</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VuLLSE06160</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lương</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Long</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">Lương Long Vũ</ss:Data></ss:Cell>
+<ss:Cell><ss:Data ss:Type="String">VuLLSE06160@fpt.edu.vn</ss:Data></ss:Cell>
+</ss:Row>
+</ss:Table>
+</ss:Worksheet>
+</ss:Workbook>
