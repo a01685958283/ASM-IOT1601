@@ -5,7 +5,7 @@
 
 package controller;
 
-import controller.auth.BaseAuthenticationController;
+import controller_auth.BaseAuthenticationController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -27,12 +27,12 @@ public class AttendanceController extends BaseAuthenticationController  {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response, Account account) throws ServletException, IOException {
-        request.getRequestDispatcher("../view/student/view.jsp").forward(request, response);
+        request.getRequestDispatcher("../view/lecturer/view.jsp").forward(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response, Account account) throws ServletException, IOException {
-        request.getRequestDispatcher("../view/student/attendance.jsp").forward(request, response);
+        request.getRequestDispatcher("../view/lecturer/attendance.jsp").forward(request, response);
     }
 
 }

@@ -8,6 +8,22 @@
         <servlet-name>LecturerAttController</servlet-name>
         <servlet-class>controller.AttController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>controller_auth.LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controller_auth.LogoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomePageController</servlet-name>
+        <servlet-class>controller_home.HomePageController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LecturerTimetableController</servlet-name>
+        <servlet-class>controller.TimeTableController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AttendanceServlet</servlet-name>
         <url-pattern>/student/attendance</url-pattern>
@@ -15,6 +31,22 @@
     <servlet-mapping>
         <servlet-name>LecturerAttController</servlet-name>
         <url-pattern>/lecture/takeatt</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomePageController</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerTimetableController</servlet-name>
+        <url-pattern>/student/timetable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
