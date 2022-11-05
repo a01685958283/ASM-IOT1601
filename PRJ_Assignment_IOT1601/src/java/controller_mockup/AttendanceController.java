@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller;
+package controller_mockup;
 
 import controller_auth.BaseAuthenticationController;
 import java.io.IOException;
@@ -18,21 +18,19 @@ import model.Account;
  *
  * @author DAT
  */
-public class AttendanceController extends BaseAuthenticationController  {
+public class AttendanceController extends HttpServlet  {
    
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response, Account account) throws ServletException, IOException {
-        request.getRequestDispatcher("../view/lecturer/view.jsp").forward(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("../view/mockup/view.jsp").forward(request, response);
     }
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response, Account account) throws ServletException, IOException {
-        request.getRequestDispatcher("../view/lecturer/attendance.jsp").forward(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("../view/mockup/attendance.jsp").forward(request, response);
     }
 
 }

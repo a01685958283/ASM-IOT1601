@@ -21,8 +21,8 @@ public abstract class BaseAuthenticationController extends HttpServlet {
         return req.getSession().getAttribute("account") != null;
     }
     
-    protected abstract void doPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException;
-    protected abstract void doGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException;
+    protected abstract void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException;
+    protected abstract void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException;
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public abstract class BaseAuthenticationController extends HttpServlet {
         {
             //write content
             Account account = (Account)req.getSession().getAttribute("account");
-            doPost(req, resp, account);
+            processPost(req, resp, account);
         }
         else
             resp.getWriter().println("access denied!");
@@ -42,7 +42,7 @@ public abstract class BaseAuthenticationController extends HttpServlet {
         {
             //write content
             Account account = (Account)req.getSession().getAttribute("account");
-            doGet(req, resp, account);
+            processGet(req, resp, account);
         }
         else
             resp.getWriter().println("access denied!");

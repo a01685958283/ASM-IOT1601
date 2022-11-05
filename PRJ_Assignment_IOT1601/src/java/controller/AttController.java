@@ -5,12 +5,14 @@
 
 package controller;
 
+import controller_auth.BaseAuthenticationController;
 import dal.SessionDBContext;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
 import model.Attandance;
 import model.Session;
 import model.Student;
@@ -19,21 +21,16 @@ import model.Student;
  *
  * @author sonnt
  */
-public class AttController extends HttpServlet {
+public class AttController extends BaseAuthenticationController {
    
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        int sesid = Integer.parseInt(request.getParameter("id"));
-        SessionDBContext sesDB = new SessionDBContext();
-        Session ses = sesDB.get(sesid);
-        request.setAttribute("ses", ses);
-        request.getRequestDispatcher("../view/lecturer/att.jsp").forward(request, response);
-    } 
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+    @Override
+    protected void processPost(HttpServletRequest request, HttpServletResponse response, Account account) throws ServletException, IOException {
         Session ses = new Session();
         ses.setId(Integer.parseInt(request.getParameter("sesid")));
         String[] stdids = request.getParameterValues("stdid");
@@ -52,8 +49,12 @@ public class AttController extends HttpServlet {
     }
 
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    protected void processGet(HttpServletRequest request, HttpServletResponse response, Account account) throws ServletException, IOException {
+        int sesid = Integer.parseInt(request.getParameter("id"));
+        SessionDBContext sesDB = new SessionDBContext();
+        Session ses = sesDB.get(sesid);
+        request.setAttribute("ses", ses);
+        request.getRequestDispatcher("../view/lecturer/att.jsp").forward(request, response);
+    }
 
 }

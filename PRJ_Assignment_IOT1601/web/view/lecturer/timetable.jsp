@@ -40,10 +40,10 @@
                                     at ${ses.room.name}<br/>
                                     (${slot.tdescription})<br/>   
                                     <c:if test="${ses.attanded}">
-                                        <a>Take</a>
+                                        <a href="../lecturer/takeatt?id=${ses.id}"> Edit </a>                                      
                                     </c:if>
                                     <c:if test="${!ses.attanded}">
-                                        <a>Edit</a>    
+                                        <a href="../lecturer/takeatt?id=${ses.id}"> Take </a>  
                                     </c:if><br/>                                    
                                 </c:if>
                                   

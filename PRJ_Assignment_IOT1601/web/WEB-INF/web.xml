@@ -2,7 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>AttendanceServlet</servlet-name>
-        <servlet-class>controller.AttendanceController</servlet-class>
+        <servlet-class>controller_mockup.AttendanceController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LecturerAttController</servlet-name>
@@ -24,13 +24,21 @@
         <servlet-name>LecturerTimetableController</servlet-name>
         <servlet-class>controller.TimeTableController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MockupAttendance</servlet-name>
+        <servlet-class>controller_mockup.AttendanceController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MockupEdit</servlet-name>
+        <servlet-class>controller_mockup.EditController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MockupReport</servlet-name>
+        <servlet-class>controller_mockup.ReportController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AttendanceServlet</servlet-name>
         <url-pattern>/student/attendance</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LecturerAttController</servlet-name>
-        <url-pattern>/lecture/takeatt</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -47,6 +55,22 @@
     <servlet-mapping>
         <servlet-name>LecturerTimetableController</servlet-name>
         <url-pattern>/student/timetable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerAttController</servlet-name>
+        <url-pattern>/lecturer/takeatt</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MockupAttendance</servlet-name>
+        <url-pattern>/mockup/attendance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MockupEdit</servlet-name>
+        <url-pattern>/mockup/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MockupReport</servlet-name>
+        <url-pattern>/mockup/report</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

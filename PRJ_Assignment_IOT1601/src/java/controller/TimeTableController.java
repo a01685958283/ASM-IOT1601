@@ -5,6 +5,7 @@
 
 package controller;
 
+import controller_auth.BaseAuthenticationController;
 import dal.LecturerDBContext;
 import dal.SessionDBContext;
 import dal.TimeSlotDBContext;
@@ -15,6 +16,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Date;
+import model.Account;
 import model.Lecturer;
 import model.Session;
 import model.TimeSlot;
@@ -23,7 +25,7 @@ import util.DateTimeHelper;
  *
  * @author Hello Ngo Tung Son handsome
  */
-public class TimeTableController extends HttpServlet {
+public class TimeTableController extends BaseAuthenticationController {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -34,7 +36,8 @@ public class TimeTableController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String lid = request.getParameter("lid");
+        
+        Account account = (Account)request.getSession().getAttribute("account");
         String raw_from = request.getParameter("from");
         String raw_to = request.getParameter("to");
         java.sql.Date from = null;
@@ -63,45 +66,25 @@ public class TimeTableController extends HttpServlet {
         request.setAttribute("slots", slots);
         
         SessionDBContext sesDB = new SessionDBContext();
-        ArrayList<Session> sessions = sesDB.filter(lid, from, to);
+        ArrayList<Session> sessions = sesDB.filter(account.getUsername(), from, to);
         request.setAttribute("sessions", sessions);
         
         LecturerDBContext lecDB = new LecturerDBContext();
-        Lecturer lecturer = lecDB.get(lid);
+        Lecturer lecturer = lecDB.get(account.getUsername());
         request.setAttribute("lecturer", lecturer);
         
         request.getRequestDispatcher("../view/lecturer/timetable.jsp").forward(request, response);
         
     } 
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
-     * Handles the HTTP <code>GET</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
-    } 
 
-    /** 
-     * Handles the HTTP <code>POST</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
+    protected void processPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        processRequest(req, resp);
     }
 
-    
-
-
+    @Override
+    protected void processGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+        processRequest(req, resp);
+    }
 }
