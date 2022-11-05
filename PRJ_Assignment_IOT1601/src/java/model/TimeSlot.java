@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class TimeSlot {
     private int id;
-    private String description;
+    private String tdescription;
 
     public int getId() {
         return id;
@@ -22,13 +22,14 @@ public class TimeSlot {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTdescription() {
+        return tdescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTdescription(String tdescription) {
+        this.tdescription = tdescription;
     }
+
 
     public ArrayList<Session> getSessions() {
         return sessions;

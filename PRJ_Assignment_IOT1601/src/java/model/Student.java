@@ -12,7 +12,13 @@ import java.util.ArrayList;
  */
 public class Student {
     private int id;
-    private String name;
+    private String code;
+    private String firstname;
+    private String midname;
+    private String lastname;
+    private String fullname;
+    private String gmail;
+    
     private ArrayList<Group> groups = new ArrayList<>();
     private ArrayList<Attandance> atts = new ArrayList<>();
 
@@ -24,13 +30,54 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getCode() {
+        return code;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCode(String code) {
+        this.code = code;
     }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getMidname() {
+        return midname;
+    }
+
+    public void setMidname(String midname) {
+        this.midname = midname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getGmail() {
+        return gmail;
+    }
+
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
+    }
+
 
     public ArrayList<Group> getGroups() {
         return groups;
