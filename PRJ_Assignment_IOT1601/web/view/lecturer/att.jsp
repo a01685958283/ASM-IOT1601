@@ -12,18 +12,39 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style type="text/css">
+            table, th, td{
+                border:1px solid #868585;
+            }
+            table{
+                border-collapse:collapse;
+                width:100%;
+            }
+            th, td{
+                text-align:left;
+                padding:10px;
+            }
+            
+            table tr:nth-child(){
+                background-color:white;
+            }
+            table tr:nth-child(1){
+                background-color:skyblue;
+            }
+        </style>
     </head>
     <body>
         Take attendance for Group: ${requestScope.ses.group.name} <br/>
         Subject: ${requestScope.ses.group.subject.name} <br/>
         Room: ${requestScope.ses.room.name} <br/>
-        Date: ${requestScope.ses.date} - ${requestScope.ses.slot.tdescription}<br/>
+        Date: ${requestScope.ses.date} <br/> 
+        Time: ${requestScope.ses.slot.tdescription}<br/>
         Attended: <span style="color: red;"> ${requestScope.ses.attanded?"Yes":"No"} </span>
         <form action="takeatt" method="POST">
             <input type="hidden" name="sesid" value="${param.id}"/>
             <table border="1px">
                 <tr>
-                    <td>No.</td>
+                    <td>No</td>
                     <td>StudentID</td>
                     <td>Full Name</td>
                     <td>Present</td>

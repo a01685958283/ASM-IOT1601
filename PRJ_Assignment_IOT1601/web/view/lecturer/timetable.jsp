@@ -12,6 +12,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style type="text/css">
+            table, th, td{
+                border:1px solid #868585;
+            }
+            table{
+                border-collapse:collapse;
+                width:100%;
+            }
+            th, td{
+                text-align:left;
+                padding:10px;
+            }
+
+        </style>
     </head>
     <body>
         Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
@@ -21,6 +35,8 @@
             To: <input type="date" name="to" value="${requestScope.to}"/>
             <input type="submit" value="View"/> 
         </form>
+        <form >
+            <div class="table-responsive">    
         <table border="1px">
             <tr>
                 <td> </td>

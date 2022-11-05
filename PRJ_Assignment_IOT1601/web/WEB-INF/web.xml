@@ -53,10 +53,6 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LecturerTimetableController</servlet-name>
-        <url-pattern>/student/timetable</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>LecturerAttController</servlet-name>
         <url-pattern>/lecturer/takeatt</url-pattern>
     </servlet-mapping>
@@ -71,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>MockupReport</servlet-name>
         <url-pattern>/mockup/report</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LecturerTimetableController</servlet-name>
+        <url-pattern>/lecturer/timetable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
