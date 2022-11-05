@@ -30,20 +30,21 @@
             </tr>
             <c:forEach items="${requestScope.slots}" var="slot">
                 <tr>
-                    <td>${slot.tdescription}</td>
+                    <td>Slot ${slot.id}</td>
                     <c:forEach items="${requestScope.dates}" var="d">
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.slot.id eq slot.id)}">
-                                    <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.id}</a>
+                                    <a href="att?id=${ses.id}">${ses.group.subject.id}</a>
                                     <br/>
-                                    ${ses.room.name}<br/>
+                                    at ${ses.room.name}<br/>
+                                    (${slot.tdescription})<br/>   
                                     <c:if test="${ses.attanded}">
-                                        <a>(Attanded)</a>
+                                        <a>Take</a>
                                     </c:if>
                                     <c:if test="${!ses.attanded}">
-                                        <a>(Absented)</a>
-                                    </c:if>
+                                        <a>Edit</a>    
+                                    </c:if><br/>                                    
                                 </c:if>
                                   
                             </c:forEach>
