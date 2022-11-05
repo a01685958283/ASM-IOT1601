@@ -26,63 +26,57 @@ import model.TimeSlot;
  */
 public class SessionDBContext extends DBContext<Session> {
 
-    public ArrayList<Session> filter(int lid, Date from, Date to) {
+    public ArrayList<Session> filter(String lid, Date from, Date to) {
         ArrayList<Session> sessions = new ArrayList<>();
         try {
-            String sql = "SELECT  \n"
-                    + "	ses.sesid,ses.[date],ses.[index],ses.attanded\n"
-                    + "	,l.lid,l.lname\n"
-                    + "	,g.gid,g.gname\n"
-                    + "	,sub.subid,sub.subname\n"
-                    + "	,r.rid,r.rname\n"
-                    + "	,t.tid,t.tdescription\n"
-                    + "FROM [Session] ses \n"
-                    + "			INNER JOIN Lecturer l ON l.lid = ses.lid\n"
-                    + "			INNER JOIN [Group] g ON g.gid = ses.gid\n"
-                    + "			INNER JOIN [Subject] sub ON sub.subid = g.subid\n"
-                    + "			INNER JOIN Room r ON r.rid = ses.rid\n"
-                    + "			INNER JOIN TimeSlot t ON t.tid = ses.tid\n"
-                    + "WHERE\n"
-                    + "l.lid = ?\n"
-                    + "AND ses.[date] >= ?\n"
-                    + "AND ses.[date] <= ?";
+            String sql = "SELECT ses.sesid,ses.[date],ses.attanded\n"
+                    + "                    ,l.lid,l.lname\n"
+                    + "                    ,g.gid,g.gname\n"
+                    + "                    ,r.rid,r.rname\n"
+                    + "                    ,t.tid,t.tdescription\n"
+                    + "                    FROM [Session] ses \n"
+                    + "                    			INNER JOIN Lecturer l ON l.lid = ses.lid\n"
+                    + "                    			INNER JOIN [Group] g ON g.gid = ses.gid\n"
+                    + "                    			INNER JOIN [Subject] sub ON sub.subid = g.subid\n"
+                    + "                   			INNER JOIN Room r ON r.rid = ses.rid\n"
+                    + "                   			INNER JOIN Time_Slot t ON t.tid = ses.tid\n"
+                    + "                    WHERE l.lid = ? AND ses.[date] >= ? AND ses.[date] <= ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, lid);
+            stm.setString(1, lid);
             stm.setDate(2, from);
             stm.setDate(3, to);
             ResultSet rs = stm.executeQuery();
-            while(rs.next())
-            {
+            while (rs.next()) {
                 Session session = new Session();
                 Lecturer l = new Lecturer();
                 Room r = new Room();
                 Group g = new Group();
                 TimeSlot t = new TimeSlot();
                 Subject sub = new Subject();
-                
+
                 session.setId(rs.getInt("sesid"));
                 session.setDate(rs.getDate("date"));
                 session.setAttanded(rs.getBoolean("attanded"));
-                
+
                 l.setId(rs.getString("lid"));
                 l.setName(rs.getString("lname"));
                 session.setLecturer(l);
-                
+
                 g.setId(rs.getInt("gid"));
                 g.setName(rs.getString("gname"));
                 session.setGroup(g);
-                
+
                 sub.setId(rs.getInt("subid"));
                 sub.setName(rs.getString("subname"));
                 g.setSubject(sub);
-                
+
                 r.setId(rs.getInt("rid"));
                 r.setName(rs.getString("rname"));
                 session.setRoom(r);
-                
+
                 t.setId(rs.getInt("tid"));
                 t.setTdescription(rs.getString("tdescription"));
-                
+
                 sessions.add(session);
             }
         } catch (SQLException ex) {
@@ -90,7 +84,7 @@ public class SessionDBContext extends DBContext<Session> {
         }
         return sessions;
     }
-    
+
     @Override
     public void insert(Session model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

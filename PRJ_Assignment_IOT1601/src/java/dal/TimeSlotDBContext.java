@@ -42,21 +42,22 @@ public class TimeSlotDBContext extends DBContext<TimeSlot> {
     public ArrayList<TimeSlot> list() {
         ArrayList<TimeSlot> slots = new ArrayList<>();
         try {
-            String sql = "SELECT tid,[tdescription] FROM TimeSlot";
+            String sql = "SELECT [tid]\n"
+                    + "      ,[tdescription]\n"
+                    + "  FROM [dbo].[Time_Slot]";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
-            while(rs.next())
-            {
+            while (rs.next()) {
                 TimeSlot slot = new TimeSlot();
                 slot.setId(rs.getInt("tid"));
                 slot.setTdescription(rs.getString("tdescription"));
                 slots.add(slot);
             }
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(TimeSlotDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return slots;
     }
-    
+
 }

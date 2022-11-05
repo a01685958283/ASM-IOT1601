@@ -33,12 +33,11 @@ public class LecturerDBContext extends dal.DBContext<Lecturer> {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public Lecturer get(int id) {
+    public Lecturer get(String id) {
         try {
             String sql = "SELECT lid,lname FROM Lecturer WHERE lid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, id);
+            stm.setString(1, id);
             ResultSet rs = stm.executeQuery();
             if(rs.next())
             {
@@ -55,6 +54,11 @@ public class LecturerDBContext extends dal.DBContext<Lecturer> {
 
     @Override
     public ArrayList<Lecturer> list() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Lecturer get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

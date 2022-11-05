@@ -30,7 +30,7 @@
             </tr>
             <c:forEach items="${requestScope.slots}" var="slot">
                 <tr>
-                    <td>${slot.description}</td>
+                    <td>${slot.tdescription}</td>
                     <c:forEach items="${requestScope.dates}" var="d">
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
@@ -38,10 +38,10 @@
                                     <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.name}</a>
                                     <br/>
                                     ${ses.room.name}
-                                    <c:if test="${ses.attandated}">
+                                    <c:if test="${ses.attanded}">
                                         <img src="../img/male-icon.png" alt=""/>
                                     </c:if>
-                                    <c:if test="${!ses.attandated}">
+                                    <c:if test="${!ses.attanded}">
                                         <img src="../img/female-icon.png" alt=""/>
                                     </c:if>
                                 </c:if>

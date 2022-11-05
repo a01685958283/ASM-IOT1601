@@ -34,12 +34,12 @@ public class TimeTableController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        int lid = Integer.parseInt(request.getParameter("lid"));
+        String lid = request.getParameter("lid");
         String raw_from = request.getParameter("from");
         String raw_to = request.getParameter("to");
         java.sql.Date from = null;
         java.sql.Date to = null;
-        if(raw_from ==null || raw_from.length() ==0)
+        if(raw_from == null || raw_from.length() ==0)
         {
             Date today = new Date();
             int todayOfWeek = DateTimeHelper.getDayofWeek(today);
