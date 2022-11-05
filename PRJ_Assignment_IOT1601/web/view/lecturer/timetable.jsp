@@ -34,15 +34,15 @@
                     <c:forEach items="${requestScope.dates}" var="d">
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
-                                <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.timeslot.id eq slot.id)}">
-                                    <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.name}</a>
+                                <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.slot.id eq slot.id)}">
+                                    <a href="att?id=${ses.id}">${ses.group.name}-${ses.group.subject.id}</a>
                                     <br/>
-                                    ${ses.room.name}
+                                    ${ses.room.name}<br/>
                                     <c:if test="${ses.attanded}">
-                                        <img src="../img/male-icon.png" alt=""/>
+                                        <a>(Attanded)</a>
                                     </c:if>
                                     <c:if test="${!ses.attanded}">
-                                        <img src="../img/female-icon.png" alt=""/>
+                                        <a>(Absented)</a>
                                     </c:if>
                                 </c:if>
                                   

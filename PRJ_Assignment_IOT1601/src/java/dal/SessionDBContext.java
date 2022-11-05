@@ -32,6 +32,7 @@ public class SessionDBContext extends DBContext<Session> {
             String sql = "SELECT ses.sesid,ses.[date],ses.attanded\n"
                     + "                    ,l.lid,l.lname\n"
                     + "                    ,g.gid,g.gname\n"
+                    + "                    ,sub.subid,sub.subname\n"
                     + "                    ,r.rid,r.rname\n"
                     + "                    ,t.tid,t.tdescription\n"
                     + "                    FROM [Session] ses \n"
@@ -66,7 +67,7 @@ public class SessionDBContext extends DBContext<Session> {
                 g.setName(rs.getString("gname"));
                 session.setGroup(g);
 
-                sub.setId(rs.getInt("subid"));
+                sub.setId(rs.getString("subid"));
                 sub.setName(rs.getString("subname"));
                 g.setSubject(sub);
 
@@ -76,6 +77,7 @@ public class SessionDBContext extends DBContext<Session> {
 
                 t.setId(rs.getInt("tid"));
                 t.setTdescription(rs.getString("tdescription"));
+                session.setSlot(t);
 
                 sessions.add(session);
             }
@@ -121,7 +123,7 @@ public class SessionDBContext extends DBContext<Session> {
                         + "           ,GETDATE())";
                 PreparedStatement stm_insert = connection.prepareStatement(sql);
                 stm_insert.setInt(1, model.getId());
-                stm_insert.setInt(2, att.getStudent().getId());
+                stm_insert.setString(2, att.getStudent().getId());
                 stm_insert.setBoolean(3, att.isPresent());
                 stm_insert.setString(4, att.getDescription());
                 stm_insert.executeUpdate();
@@ -198,7 +200,7 @@ public class SessionDBContext extends DBContext<Session> {
                     ses.setGroup(g);
 
                     Subject sub = new Subject();
-                    sub.setId(rs.getInt("subid"));
+                    sub.setId(rs.getString("subid"));
                     sub.setName(rs.getString("subname"));
                     g.setSubject(sub);
 
@@ -207,7 +209,7 @@ public class SessionDBContext extends DBContext<Session> {
                 }
                 //read student
                 Student s = new Student();
-                s.setId(rs.getInt("stdid"));
+                s.setId(rs.getString("stdid"));
                 s.setCode(rs.getString("stdcode"));
                 s.setFirstname(rs.getString("stdfirstname"));
                 s.setMidname(rs.getString("stdmidname"));

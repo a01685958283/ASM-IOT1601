@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author sonnt
  */
 public class Student {
-    private int id;
+    private String id;
     private String code;
     private String firstname;
     private String midname;
@@ -22,13 +22,14 @@ public class Student {
     private ArrayList<Group> groups = new ArrayList<>();
     private ArrayList<Attandance> atts = new ArrayList<>();
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
+
 
     public String getCode() {
         return code;
