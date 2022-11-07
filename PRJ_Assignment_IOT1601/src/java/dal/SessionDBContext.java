@@ -97,58 +97,11 @@ public class SessionDBContext extends DBContext<Session> {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public Session getStudentList(int id) {
-        try {
-            String sql = "SELECT sub.subid,sub.subname,g.gid,g.gname,g.year,g.sem,s.stdid,s.stdcode,s.stdfirstname,s.stdmidname,s.stdlastname,s.stdgmail\n"
-                    + "  FROM [dbo].[Session] ses\n"
-                    + "  INNER JOIN [Group] g ON g.gid = ses.gid\n"
-                    + "  INNER JOIN Subject sub on g.subid = sub.subid\n"
-                    + "  INNER JOIN Student_Group stg on stg.gid = g.gid\n"
-                    + "  INNER JOIN Student s on s.stdid = stg.stdid\n"
-                    + "  where sesid = ?";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, id);
-            ResultSet rs = stm.executeQuery();
-            Session sesStd = null;
-            while (rs.next()) {
-                if (sesStd == null) {
-                    sesStd = new Session();                  
-
-                    Group g = new Group();
-                    g.setId(rs.getInt("gid"));
-                    g.setName(rs.getString("gname"));
-                    g.setYear(rs.getInt("year"));
-                    g.setSem(rs.getString("sem"));
-                    sesStd.setGroup(g);
-
-                    Subject sub = new Subject();
-                    sub.setId(rs.getString("subid"));
-                    sub.setName(rs.getString("subname"));
-                    g.setSubject(sub);
-
-                }
-                //read student
-                Student s = new Student();
-                s.setId(rs.getString("stdid"));
-                s.setCode(rs.getString("stdcode"));
-                s.setFirstname(rs.getString("stdfirstname"));
-                s.setMidname(rs.getString("stdmidname"));
-                s.setLastname(rs.getString("stdlastname"));
-                s.setFullname(rs.getString("stdfullname"));
-                s.setGmail(rs.getString("stdgmail"));
-            }
-            return sesStd;
-        } catch (SQLException ex) {
-            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-
     @Override
     public Session get(int id) {
         try {
             String sql = "SELECT ses.sesid,ses.date,ses.attanded\n"
-                    + "                    	,g.gid,g.gname\n"
+                    + "                    	,g.gid,g.gname,g.year,g.sem\n"
                     + "                    	,r.rid,r.rname\n"
                     + "                    	,t.tid,t.tdescription\n"
                     + "                    	,l.lid,l.lname\n"
@@ -190,12 +143,15 @@ public class SessionDBContext extends DBContext<Session> {
                     Group g = new Group();
                     g.setId(rs.getInt("gid"));
                     g.setName(rs.getString("gname"));
+                    g.setYear(rs.getInt("year"));
+                    g.setSem(rs.getString("sem"));
                     ses.setGroup(g);
 
                     Subject sub = new Subject();
                     sub.setId(rs.getString("subid"));
                     sub.setName(rs.getString("subname"));
                     g.setSubject(sub);
+                    
 
                     ses.setDate(rs.getDate("date"));
                     ses.setAttanded(rs.getBoolean("attanded"));
