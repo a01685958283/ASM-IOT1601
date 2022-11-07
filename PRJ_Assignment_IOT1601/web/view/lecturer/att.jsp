@@ -75,6 +75,7 @@
                 
             </table>
             <input type="submit" value="Save"/>
+            <a href="../lecturer/timetable"> Back </a>  
         </form>
     </body>
 </html>
