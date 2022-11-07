@@ -37,8 +37,8 @@
         <servlet-class>controller_mockup.ReportController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>GroupStudentController</servlet-name>
-        <servlet-class>controller.GroupStudentController</servlet-class>
+        <servlet-name>FilterController</servlet-name>
+        <servlet-class>controller.FilterController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AttendanceServlet</servlet-name>
@@ -77,8 +77,8 @@
         <url-pattern>/lecturer/timetable</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>GroupStudentController</servlet-name>
-        <url-pattern>/lecturer/student</url-pattern>
+        <servlet-name>FilterController</servlet-name>
+        <url-pattern>/Filter</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

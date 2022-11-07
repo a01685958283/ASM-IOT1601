@@ -52,7 +52,7 @@
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.slot.id eq slot.id)}">
-                                    <a href="../lecturer/student?id=${ses.id}">${ses.group.subject.id}</a>
+                                    <a href="../Filter?subid=${ses.group.subject.id}&groupid=${ses.group.id}">${ses.group.subject.id}</a>
                                     <br/>
                                     at ${ses.room.name}<br/>
                                     (${slot.tdescription})<br/>   
