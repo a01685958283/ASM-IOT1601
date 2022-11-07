@@ -93,62 +93,55 @@ public class SessionDBContext extends DBContext<Session> {
     }
 
     @Override
-    public void update(Session model) {
-        try {
-            connection.setAutoCommit(false);
-            String sql = "UPDATE [Session] SET attanded = 1 WHERE sesid = ?";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, model.getId());
-            stm.executeUpdate();
-
-            //remove old attandances
-            sql = "DELETE Attandance WHERE sesid = ?";
-            PreparedStatement stm_delete = connection.prepareStatement(sql);
-            stm_delete.setInt(1, model.getId());
-            stm_delete.executeUpdate();
-
-            //insert new attandances
-            for (Attandance att : model.getAtts()) {
-                sql = "INSERT INTO [Attandance]\n"
-                        + "           ([sesid]\n"
-                        + "           ,[stdid]\n"
-                        + "           ,[present]\n"
-                        + "           ,[description]\n"
-                        + "           ,[record_time])\n"
-                        + "     VALUES\n"
-                        + "           (?\n"
-                        + "           ,?\n"
-                        + "           ,?\n"
-                        + "           ,?\n"
-                        + "           ,GETDATE())";
-                PreparedStatement stm_insert = connection.prepareStatement(sql);
-                stm_insert.setInt(1, model.getId());
-                stm_insert.setString(2, att.getStudent().getId());
-                stm_insert.setBoolean(3, att.isPresent());
-                stm_insert.setString(4, att.getDescription());
-                stm_insert.executeUpdate();
-            }
-            connection.commit();
-        } catch (SQLException ex) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex1) {
-                Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                connection.setAutoCommit(true);
-            } catch (SQLException ex) {
-                Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-    }
-
-    @Override
     public void delete(Session model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Session getStudentList(int id) {
+        try {
+            String sql = "SELECT sub.subid,sub.subname,g.gid,g.gname,g.year,g.sem,s.stdid,s.stdcode,s.stdfirstname,s.stdmidname,s.stdlastname,s.stdgmail\n"
+                    + "  FROM [dbo].[Session] ses\n"
+                    + "  INNER JOIN [Group] g ON g.gid = ses.gid\n"
+                    + "  INNER JOIN Subject sub on g.subid = sub.subid\n"
+                    + "  INNER JOIN Student_Group stg on stg.gid = g.gid\n"
+                    + "  INNER JOIN Student s on s.stdid = stg.stdid\n"
+                    + "  where sesid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            Session sesStd = null;
+            while (rs.next()) {
+                if (sesStd == null) {
+                    sesStd = new Session();                  
+
+                    Group g = new Group();
+                    g.setId(rs.getInt("gid"));
+                    g.setName(rs.getString("gname"));
+                    g.setYear(rs.getInt("year"));
+                    g.setSem(rs.getString("sem"));
+                    sesStd.setGroup(g);
+
+                    Subject sub = new Subject();
+                    sub.setId(rs.getString("subid"));
+                    sub.setName(rs.getString("subname"));
+                    g.setSubject(sub);
+
+                }
+                //read student
+                Student s = new Student();
+                s.setId(rs.getString("stdid"));
+                s.setCode(rs.getString("stdcode"));
+                s.setFirstname(rs.getString("stdfirstname"));
+                s.setMidname(rs.getString("stdmidname"));
+                s.setLastname(rs.getString("stdlastname"));
+                s.setFullname(rs.getString("stdfullname"));
+                s.setGmail(rs.getString("stdgmail"));
+            }
+            return sesStd;
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     @Override
@@ -236,4 +229,57 @@ public class SessionDBContext extends DBContext<Session> {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public void update(Session model) {
+        try {
+            connection.setAutoCommit(false);
+            String sql = "UPDATE [Session] SET attanded = 1 WHERE sesid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, model.getId());
+            stm.executeUpdate();
+
+            //remove old attandances
+            sql = "DELETE Attandance WHERE sesid = ?";
+            PreparedStatement stm_delete = connection.prepareStatement(sql);
+            stm_delete.setInt(1, model.getId());
+            stm_delete.executeUpdate();
+
+            //insert new attandances
+            for (Attandance att : model.getAtts()) {
+                sql = "INSERT INTO [Attandance]\n"
+                        + "           ([sesid]\n"
+                        + "           ,[stdid]\n"
+                        + "           ,[present]\n"
+                        + "           ,[description]\n"
+                        + "           ,[record_time])\n"
+                        + "     VALUES\n"
+                        + "           (?\n"
+                        + "           ,?\n"
+                        + "           ,?\n"
+                        + "           ,?\n"
+                        + "           ,GETDATE())";
+                PreparedStatement stm_insert = connection.prepareStatement(sql);
+                stm_insert.setInt(1, model.getId());
+                stm_insert.setString(2, att.getStudent().getId());
+                stm_insert.setBoolean(3, att.isPresent());
+                stm_insert.setString(4, att.getDescription());
+                stm_insert.executeUpdate();
+            }
+            connection.commit();
+        } catch (SQLException ex) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                connection.setAutoCommit(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
 }

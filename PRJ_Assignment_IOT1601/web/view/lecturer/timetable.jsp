@@ -26,8 +26,9 @@
             }
 
         </style>
-    </head>
+    
     <body>
+    </head>
         Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
         <form action="timetable" method="GET">
             <input type="hidden" name="lid" value="${param.lid}"/>
@@ -51,7 +52,7 @@
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.slot.id eq slot.id)}">
-                                    <a href="att?id=${ses.id}">${ses.group.subject.id}</a>
+                                    <a href="../lecturer/student?id=${ses.id}">${ses.group.subject.id}</a>
                                     <br/>
                                     at ${ses.room.name}<br/>
                                     (${slot.tdescription})<br/>   

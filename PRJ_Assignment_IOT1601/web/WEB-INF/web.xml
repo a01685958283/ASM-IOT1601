@@ -36,6 +36,10 @@
         <servlet-name>MockupReport</servlet-name>
         <servlet-class>controller_mockup.ReportController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GroupStudentController</servlet-name>
+        <servlet-class>controller.GroupStudentController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AttendanceServlet</servlet-name>
         <url-pattern>/student/attendance</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>LecturerTimetableController</servlet-name>
         <url-pattern>/lecturer/timetable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GroupStudentController</servlet-name>
+        <url-pattern>/lecturer/student</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
