@@ -41,8 +41,8 @@
         <servlet-class>controller.FilterController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CalculateController</servlet-name>
-        <servlet-class>controller.CalculateController</servlet-class>
+        <servlet-name>ReportController</servlet-name>
+        <servlet-class>controller.ReportController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AttendanceServlet</servlet-name>
@@ -81,16 +81,16 @@
         <url-pattern>/lecturer/timetable</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>FilterController</servlet-name>
-        <url-pattern>/Filter</url-pattern>
+        <servlet-name>ReportController</servlet-name>
+        <url-pattern>/lecturer/report</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CalculateController</servlet-name>
-        <url-pattern>/lecturer/calculate</url-pattern>
+        <servlet-name>FilterController</servlet-name>
+        <url-pattern>/lecture/filter</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            300
         </session-timeout>
     </session-config>
 </web-app>

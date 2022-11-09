@@ -4,6 +4,7 @@
     Author     : Ngo Tung Son
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="helper" class="util.DateTimeHelper"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -42,8 +43,11 @@
             <tr>
                 <td> </td>
                 <c:forEach items="${requestScope.dates}" var="d">
-                    <td>${d}<br/>${helper.getDayNameofWeek(d)}</td>
-                    </c:forEach>
+                    <td>
+                        <fmt:formatDate value="${d}" pattern="dd/MM"/><br/>
+                        ${helper.getDayNameofWeek(d)}
+                    </td>
+                </c:forEach>
             </tr>
             <c:forEach items="${requestScope.slots}" var="slot">
                 <tr>
@@ -52,18 +56,22 @@
                         <td>
                             <c:forEach items="${requestScope.sessions}" var="ses">
                                 <c:if test="${helper.compare(ses.date,d) eq 0 and (ses.slot.id eq slot.id)}">
-                                    <a href="../Filter?subid=${ses.group.subject.id}&groupid=${ses.group.id}">${ses.group.subject.id}</a>
+                                    <a href="../lecture/filter?subid=${ses.group.subject.id}&groupid=${ses.group.id}">${ses.group.subject.id}</a>
                                     <br/>
                                     at ${ses.room.name}<br/>
-                                    (${slot.tdescription})<br/>   
                                     <c:if test="${ses.attanded}">
-                                        <a href="../lecturer/takeatt?id=${ses.id}"> Edit </a>                                      
+                                        <a style="color: blue">(Attended)</a><br/>
+                                        <a style="color: purple" >(${slot.tdescription})</a><br/>   
+                                        <a href="../lecturer/takeatt?id=${ses.id}"> Edit </a> -  
+                                        <a href="../lecturer/report?subid=${ses.group.subject.id}&groupid=${ses.group.id}"> View </a>
                                     </c:if>
                                     <c:if test="${!ses.attanded}">
-                                        <a href="../lecturer/takeatt?id=${ses.id}"> Take </a>  
+                                        <a style="color: red">(Not yet)</a><br/>
+                                        <a style="color: purple" >(${slot.tdescription})</a><br/>   
+                                        <a href="../lecturer/takeatt?id=${ses.id}"> Take </a> -
+                                        <a href="../lecturer/report?subid=${ses.group.subject.id}&groupid=${ses.group.id}"> View </a>  
                                     </c:if><br/>                                    
                                 </c:if>
-                                  
                             </c:forEach>
                         </td>
                     </c:forEach>

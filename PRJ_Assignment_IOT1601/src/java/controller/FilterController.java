@@ -62,9 +62,11 @@ public class FilterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         SubjectDBContext subdb = new SubjectDBContext();
         ArrayList<Subject> listSubject = subdb.listSubject();
         request.setAttribute("sub", listSubject);
+        
         String subid = request.getParameter("subid");
 
         GroupDBContext grdb = new GroupDBContext();

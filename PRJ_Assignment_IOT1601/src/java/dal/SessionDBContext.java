@@ -26,6 +26,28 @@ import model.TimeSlot;
  */
 public class SessionDBContext extends DBContext<Session> {
 
+    public ArrayList<Session> listSessionsDates(int id) {
+        ArrayList<Session> listSessionsDates = new ArrayList<>();
+        try {
+            String sql = "SELECT sesid,date\n"
+                    + "  FROM [dbo].[Session] \n"
+                    + "   WHERE gid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Session s = new Session();
+                s.setId(rs.getInt("sesid"));
+                s.setDate(rs.getDate("date"));
+                listSessionsDates.add(s);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listSessionsDates;
+    }
+
     public ArrayList<Session> filter(String lid, Date from, Date to) {
         ArrayList<Session> sessions = new ArrayList<>();
         try {
@@ -96,7 +118,6 @@ public class SessionDBContext extends DBContext<Session> {
     public void delete(Session model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
 
     public Session getFilter(String subid, int gid) {
         try {

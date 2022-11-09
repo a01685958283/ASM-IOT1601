@@ -5,7 +5,6 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,7 +29,7 @@
                                 <c:forEach items="${requestScope.sub}" var="s">
                                     <tr>
                                         <td>
-                                            <a href="Filter?subid=${s.id}">${s.name}(${s.id})</a></br>
+                                            <a href="../lecture/filter?subid=${s.id}">${s.name}(${s.id})</a></br>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -44,7 +43,7 @@
                                 <c:forEach items="${requestScope.group}" var="g">
                                     <tr>
                                         <td>
-                                            <a href="Filter?subid=${param.subid}&groupid=${g.id}">${g.name}</br>
+                                            <a href="../lecture/filter?subid=${param.subid}&groupid=${g.id}">${g.name}</br>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -82,7 +81,7 @@
                         </c:forEach>
                     </tbody>
                 </table>
-                <a href="lecturer/timetable"> Back </a> 
+                <a href="../lecturer/timetable"> Back </a> 
             </div>
         </c:if>
         </body>

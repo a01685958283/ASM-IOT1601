@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Attandance;
-import model.Group;
 import model.Session;
 import model.Student;
 
@@ -19,61 +18,65 @@ import model.Student;
  *
  * @author DAT
  */
-public class StudentDBContext extends DBContext<Student> {
+public class AttandanceDBContext extends DBContext<Attandance> {
 
-    public ArrayList<Student> listStudentInAGroup(int id) {
-        ArrayList<Student> liststudent = new ArrayList<>();
+    public ArrayList<Attandance> listattendances(int id) {
+        ArrayList<Attandance> listsatt = new ArrayList<>();
         try {
-            String sql = "SELECT s.stdid,s.stdcode,s.stdfirstname,s.stdmidname,s.stdlastname,s.stdgmail\n"
-                    + "FROM Student s\n"
-                    + "INNER JOIN Student_Group stdg ON stdg.stdid = s.stdid\n"
-                    + "INNER JOIN [Group] g ON g.gid = stdg.gid\n"
-                    + "WHERE g.gid = ?";
+            String sql = " SELECT a.[sesid] \n"
+                    + "      ,[stdid]\n"
+                    + "      ,[present]\n"
+                    + "  FROM [dbo].[Attandance] a\n"
+                    + "  join Session s on s.sesid = a.sesid\n"
+                    + "  where s.gid = ? ";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-
+                Session ses = new Session();
                 Student s = new Student();
-                s.setId(rs.getString("stdid"));
-                s.setCode(rs.getString("stdcode"));
-                s.setFirstname(rs.getString("stdfirstname"));
-                s.setMidname(rs.getString("stdmidname"));
-                s.setLastname(rs.getString("stdlastname"));
-                s.setGmail(rs.getString("stdgmail"));
+                Attandance a = new Attandance();
 
-                liststudent.add(s);
+                ses.setId(rs.getInt("sesid"));
+
+                a.setPresent(rs.getBoolean("present"));
+
+                s.setId(rs.getString("stdid"));             
+
+                a.setSession(ses);
+                a.setStudent(s);
+                listsatt.add(a);
 
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return liststudent;
+        return listsatt;
     }
 
     @Override
-    public void insert(Student model) {
+    public void insert(Attandance model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Student model) {
+    public void update(Attandance model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Student model) {
+    public void delete(Attandance model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Student get(int id) {
+    public Attandance get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ArrayList<Student> list() {
+    public ArrayList<Attandance> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
