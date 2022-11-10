@@ -109,5 +109,6 @@
                 </c:forEach>               
             </tbody>
         </table>    
+        <a href="../lecturer/timetable"> Back </a>  
     </body>
 </html>
